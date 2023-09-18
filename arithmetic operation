@@ -1,0 +1,195 @@
+<!=====this is xml file====>
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="104dp"
+        android:layout_height="50dp"
+        android:text="Enter no1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.231" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="114dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="356dp"
+        android:text="Enter no2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.633" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="sum"
+        android:text="add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.309" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="232dp"
+        android:onClick="sub"
+        android:text="sub"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.728"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="mul"
+        android:text="mul"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.528" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="div"
+        android:text="div"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.626"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintVertical_bias="0.461" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/app_name"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.386" />
+
+    <EditText
+        android:id="@+id/editTextNumber2"
+        android:layout_width="178dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:hint="@string/app_name"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+        app:layout_constraintVertical_bias="0.475" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+<!====this is acitivity.java file===>
+
+
+
+
+
+
+package com.example.arthmetic;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+   public void sum(View v) {
+       EditText first = findViewById(R.id.editTextNumber);
+       EditText second = findViewById(R.id.editTextNumber2);
+       Button add = findViewById(R.id.button);
+
+       String a = first.getText().toString();
+       String b = second.getText().toString();
+       Integer val1 = Integer.parseInt(a);
+       Integer val2 = Integer.parseInt(b);
+       Integer add1 = val1 + val2;
+       Toast.makeText(getApplicationContext(), "sum = " + add1, Toast.LENGTH_SHORT).show();
+   }
+    public void sub(View v){
+        EditText first=findViewById(R.id.editTextNumber);
+        EditText second=findViewById(R.id.editTextNumber2);
+        Button add2=findViewById(R.id.button2);
+        String a=first.getText().toString();
+        String b=second.getText().toString();
+        Integer val1=Integer.parseInt(a);
+        Integer val2=Integer.parseInt(b);
+        Integer add1=val1-val2;
+        Toast.makeText(getApplicationContext(), "sub = "+add1, Toast.LENGTH_SHORT).show();
+    }
+    public void mul(View v){
+        EditText first=findViewById(R.id.editTextNumber);
+        EditText second=findViewById(R.id.editTextNumber2);
+        Button add3=findViewById(R.id.button3);
+        String a=first.getText().toString();
+        String b=second.getText().toString();
+        Integer val1=Integer.parseInt(a);
+        Integer val2=Integer.parseInt(b);
+        Integer add1=val1*val2;
+        Toast.makeText(getApplicationContext(), "mul = "+add1, Toast.LENGTH_SHORT).show();
+    }
+    public void div(View v){
+        EditText first=findViewById(R.id.editTextNumber);
+        EditText second=findViewById(R.id.editTextNumber2);
+        Button add4=findViewById(R.id.button4);
+        String a=first.getText().toString();
+        String b=second.getText().toString();
+        Integer val1=Integer.parseInt(a);
+        Integer val2=Integer.parseInt(b);
+        Integer add1=val1/val2;
+        Toast.makeText(getApplicationContext(), "sum = "+add1, Toast.LENGTH_SHORT).show();
+    }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+
+    }
+}
