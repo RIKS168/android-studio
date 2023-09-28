@@ -1,0 +1,75 @@
+<!=======acitivity_main.xml =========>
+
+
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/getValue"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="15dp"
+        android:hint="@string/enter_tempeature"
+        android:inputType="number"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/showAns"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="@string/_0_0"
+        android:textAlignment="center"
+        android:textColorHighlight="#E91E63"
+        android:textColorHint="#9C27B0"
+        android:textColorLink="#9C27B0"
+        android:textSize="30sp" />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <RadioButton
+        android:id="@+id/c2f"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:text="@string/c_2_f"
+        android:textColorLink="#9C27B0" />
+
+    <RadioButton
+        android:id="@+id/f2c"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:text="@string/f_2_c" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/showans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/show_ans" />
+
+        <Button
+            android:id="@+id/again"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/again"
+            android:textColorLink="#9C27B0" />
+
+
+    </LinearLayout>
+</LinearLayout>
